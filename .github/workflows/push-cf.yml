@@ -6,8 +6,8 @@ on: workflow_dispatch
 env:
   IBM_CLOUD_REGION: us-south
   IBM_CLOUD_GROUP: default
-  IBM_CLOUD_SPACE: dev
-  IBM_CLOUD_ORG:
+  IBM_CLOUD_SPACE: myspaceapp
+  IBM_CLOUD_ORG: kinawal1@in.ibm.com
   MANIFEST_NAME: manifest.yml
   IBM_CLOUD_API: ${{secrets.IBM_CLOUD_API_KEY}}
 
@@ -33,7 +33,7 @@ jobs:
         shell: bash
       - name: Log into IBM Cloud
         run: |
-          ibmcloud login --apikey "$IBM_CLOUD_API" -r "$IBM_CLOUD_REGION" -g "$IBM_CLOUD_GROUP"
+          ibmcloud login --apikey "$IBM_CLOUD_API" -r "us-south"
         shell: bash
       - name: Target CF
         run: ibmcloud target --cf-api https://api.$IBM_CLOUD_REGION.cf.cloud.ibm.com -r $IBM_CLOUD_REGION -o $IBM_CLOUD_ORG -s $IBM_CLOUD_SPACE
