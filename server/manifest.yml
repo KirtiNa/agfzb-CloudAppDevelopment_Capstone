@@ -1,11 +1,11 @@
   applications:
-  - name: djangoapp
+  - name: kirtinawalecapstone
     routes:
-      - route: $HOST.$DOMAIN
+      - route: kirtidealershipapp.mybluemix.net
     memory: 128M
     buildpack: python_buildpack
-  - name: djangoapp-nginx
+  - name: kirtinawalecapstonedjangoapp-nginx
     routes:
-      - route: $HOST.$DOMAIN/static
-    memory: 128M
+      - route: kirtidealershipapp.mybluemix.net/static
+    memory: 256M
     buildpack: staticfile_buildpack
